@@ -1,0 +1,125 @@
+/* .landingContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 10px;
+	gap: 200px;
+	background-color: white;
+	width: 100%;
+	height: 100vh;
+}
+
+.landingContent {
+	text-align: center;
+	background-color: rgba(159, 158, 158, 0.486);
+	border-radius: 10px;
+	padding: 10px 10px;
+	border: 1px solid black;
+	transition: all 0.3s ease;
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.landingContent:hover {
+	background-color: rgba(159, 158, 158, 0.935);
+}
+
+.landingContent button {
+	padding: 10px 20px;
+	font: 16px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+}
+
+.landingContent button:hover {
+	background-color: cadetblue;
+}
+
+.landingContent2 {
+	text-align: center;
+	background-color: rgba(159, 158, 158, 0.486);
+	border-radius: 10px;
+	width: 30%;
+	height: 10%;
+	padding: 10px 10px;
+	border: 1px solid black;
+	transition: all 0.3s ease;
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+
+.landingContent2 button {
+	width: 100%;
+	height: 100%;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.landingContent2:hover {
+	background-color: rgba(159, 158, 158, 0.935);
+} */
+
+.landingContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+	height: 100vh;
+	background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
+	padding: 20px;
+	font-family: "Segoe UI", sans-serif;
+}
+
+.landingBox {
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 20px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+	padding: 40px;
+	width: 90%;
+	max-width: 400px;
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.landingBox:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.landingBox h1 {
+	margin-bottom: 10px;
+	font-size: 28px;
+	color: #333;
+}
+
+.landingBox p {
+	font-size: 16px;
+	color: #666;
+}
+
+.landingButton {
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	padding: 12px 24px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.landingButton:hover {
+	background-color: #3e8e41;
+}
+
+.landingSecondaryButton {
+	background-color: #2196f3;
+}
+
+.landingSecondaryButton:hover {
+	background-color: #0b7dda;
+}
