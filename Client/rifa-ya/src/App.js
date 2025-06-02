@@ -1,7 +1,8 @@
 import "./App.css"
 import { useNavigate, Route, Routes } from "react-router-dom"
 import { useEffect } from "react"
-import Landing from "./components/landing/Landing"
+import Landing from "./components/landing/landing"
+import Register from "../src/components/register/register"
 
 function App() {
 	const navigate = useNavigate()
@@ -16,6 +17,7 @@ function App() {
 			</Route>
 
 			<Route path="/landing" element={<Landing />}></Route>
+			<Route path="/createUser" element={<Register />}></Route>
 		</Routes>
 	)
 }
