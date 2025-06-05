@@ -17,7 +17,7 @@ export default function Landing() {
 			<div className={style.landingBox}>
 				<h1>¿Nuevo aquí?</h1>
 				<button
-					onClick={() => navigate("/createUser")}
+					onClick={() => navigate("/register")}
 					className={style.landingButton}
 				>
 					Registrarse
@@ -27,7 +27,7 @@ export default function Landing() {
 			<div className={style.landingBox}>
 				<h1>¿Ya tienes cuenta?</h1>
 				<button
-					onClick={() => navigate("/logUser")}
+					onClick={() => navigate("/login")}
 					className={style.landingButton}
 				>
 					Iniciar sesión
