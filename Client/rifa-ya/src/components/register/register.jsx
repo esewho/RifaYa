@@ -1,21 +1,41 @@
 import React, { useState } from "react"
 import style from "./register.module.css"
 import { toast } from "react-hot-toast"
+import { useNavigate } from "react-router-dom"
 
 const Register = () => {
 	const [formData, setFormData] = useState({
-		name: "",
+		username: "",
 		email: "",
 		password: "",
 	})
+	const navigate = useNavigate()
 
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value })
 	}
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault()
-		toast.success("Registro exitoso")
+		try {
+			const response = await fetch(`http://localhost:3001/user/register`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(formData),
+			})
+
+			const data = await response.json()
+			if (response.ok) {
+				toast.success("Registro exitoso")
+				localStorage.setItem("token", data.token)
+			} else {
+				toast.error("No ha sido posible registrarse")
+			}
+		} catch (error) {
+			console.error("Error:", error.message)
+		}
 	}
 
 	return (
@@ -27,12 +47,12 @@ const Register = () => {
 
 				<form onSubmit={handleSubmit} className={style.form}>
 					<div className={style.formGroup}>
-						<label htmlFor="name">Nombre</label>
+						<label htmlFor="username">Nombre</label>
 						<input
-							id="name"
+							id="username"
 							type="text"
-							name="name"
-							value={formData.name}
+							name="username"
+							value={formData.username}
 							onChange={handleChange}
 							placeholder="Tu nombre"
 							required
@@ -65,7 +85,11 @@ const Register = () => {
 						/>
 					</div>
 
-					<button type="submit" className={style.submitButton}>
+					<button
+						onClick={() => navigate("/home")}
+						type="submit"
+						className={style.submitButton}
+					>
 						Registrarse
 					</button>
 				</form>
